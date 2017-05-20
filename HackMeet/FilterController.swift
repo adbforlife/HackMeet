@@ -7,6 +7,10 @@
 //
 
 import UIKit
+<<<<<<< Updated upstream
 class FilterController: UIViewController {
+=======
+class FilterController: UIViewController    {
+>>>>>>> Stashed changes
     
 }

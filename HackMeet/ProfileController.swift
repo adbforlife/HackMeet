@@ -42,6 +42,8 @@ class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDeleg
         nameTextView.isScrollEnabled = false
         nameTextView.returnKeyType = UIReturnKeyType.done
         containerView.addSubview(nameTextView)
+        
+        User.sharedUser.updateName("iloveapple")
     }
     
     // Readjusts the UIScrollView

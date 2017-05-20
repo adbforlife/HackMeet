@@ -33,12 +33,34 @@
                 <viewController id="bwP-FF-eZd" customClass="SearchController" customModule="HackMeet" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="Search" id="099-39-u0H"/>
                     <connections>
+<<<<<<< Updated upstream
                         <segue destination="ulY-LE-Sbc" kind="show" identifier="toFilter" action="showDetailViewController:sender:" id="Fz7-pG-UUf"/>
+=======
+                        <segue destination="TgS-Sl-xHm" kind="show" identifier="toFilter" id="8Sr-cb-Psx"/>
+>>>>>>> Stashed changes
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKS-hM-i5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="716" y="301.79910044977515"/>
+        </scene>
+        <!--Filter Controller-->
+        <scene sceneID="o8L-zw-qtb">
+            <objects>
+                <viewController id="TgS-Sl-xHm" customClass="FilterController" customModule="HackMeet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bma-NZ-Z2A"/>
+                        <viewControllerLayoutGuide type="bottom" id="lcx-7Q-AxY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qRN-5l-6eS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kON-da-gUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1636" y="302"/>
         </scene>
         <!--Profile-->
         <scene sceneID="4gl-46-9Ix">

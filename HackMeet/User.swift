@@ -15,6 +15,9 @@ class User {
     var numHackathons = 0
     var userId: Int?
     
+    static var sharedUser = User()
+    private init() {}
+    
     func updateName(_ name: String) {
         // prepare json data
         let json: [String: Any] = ["userId": 1, "userChecksum": name]
