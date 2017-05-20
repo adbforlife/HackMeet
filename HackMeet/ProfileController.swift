@@ -12,7 +12,11 @@ class ProfileController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Sets up the header, background, and other views
+        self.view.backgroundColor = UIColor.white
+        let header = Header(title: "Profile")
+        self.view.addSubview(header)
     }
 
 }
