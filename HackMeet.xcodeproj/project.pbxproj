@@ -15,6 +15,7 @@
 		64E35FEB1ED087530032C2FA /* HackMeet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64E35FE91ED087530032C2FA /* HackMeet.xcdatamodeld */; };
 		64E35FED1ED087530032C2FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64E35FEC1ED087530032C2FA /* Assets.xcassets */; };
 		64E35FF01ED087530032C2FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64E35FEE1ED087530032C2FA /* LaunchScreen.storyboard */; };
+		F53183221ED0B5E600AEC40F /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53183211ED0B5E600AEC40F /* FilterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		64E35FEC1ED087530032C2FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64E35FEF1ED087530032C2FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64E35FF11ED087530032C2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F53183211ED0B5E600AEC40F /* FilterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				4D6E34541ED0A5FE003FB97F /* Header.swift */,
 				64E35FE41ED087530032C2FA /* ProfileController.swift */,
 				4D6E34521ED0A556003FB97F /* SearchController.swift */,
+				F53183211ED0B5E600AEC40F /* FilterController.swift */,
 				64E35FE61ED087530032C2FA /* Main.storyboard */,
 				64E35FEC1ED087530032C2FA /* Assets.xcassets */,
 				64E35FEE1ED087530032C2FA /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				4D6E34551ED0A5FE003FB97F /* Header.swift in Sources */,
 				64E35FEB1ED087530032C2FA /* HackMeet.xcdatamodeld in Sources */,
 				64E35FE51ED087530032C2FA /* ProfileController.swift in Sources */,
+				F53183221ED0B5E600AEC40F /* FilterController.swift in Sources */,
 				64E35FE31ED087530032C2FA /* AppDelegate.swift in Sources */,
 				4D6E34531ED0A556003FB97F /* SearchController.swift in Sources */,
 			);
