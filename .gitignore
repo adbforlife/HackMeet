@@ -147,16 +147,30 @@ Carthage/Build
 
 ## Other
 
-# xcode noise
-build/*
-*.pbxuser
-*.mode1v3
-
-# old skool
-.svn
-
-# osx noise
+# OS X Finder
 .DS_Store
-profile
+
+# Xcode per-user config
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+xcuserdata
+
+# Build products
+build/
+*.o
+*.LinkFileList
+*.hmap
+
+# Automatic backup files
+*~.nib/
+*.swp
+*~
+*.dat
+*.dep
 
 # End of https://www.gitignore.io/api/node,swift,xcode
