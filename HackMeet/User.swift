@@ -6,15 +6,13 @@
 //  Copyright © 2017 ADB. All rights reserved.
 //
 
-import UIKit
-
 class User {
     
     var name = ""
     var email = ""
-    var numHackathons = 0
+    var summary = ""
+    var numHacks = 0
     
     static var sharedUser = User()
-    private init() { }
-    
+    private init() {}
 }

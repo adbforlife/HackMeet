@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProfileController.swift
 //  HackMeet
 //
 //  Created by ADB on 5/20/17.
@@ -15,6 +15,7 @@ class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDeleg
     
     var nameTextView: UITextView!
     var emailTextView: UITextView!
+    var summaryTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,7 @@ class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDeleg
         nameTextView.isSelectable = false
         nameTextView.returnKeyType = UIReturnKeyType.done
         containerView.addSubview(nameTextView)
-        makeEditButton(frame: CGRect(x: 330, y: Int(nameTextView.frame.minY)+10, width: 25, height: 25), selector: #selector(self.editName(_:)))
+        makeEditButton(frame: CGRect(x: 340, y: Int(nameTextView.frame.minY)+10, width: 25, height: 25), selector: #selector(self.editName(_:)))
         
         emailTextView = UITextView(frame: CGRect(x: 125, y: 65, width: 300, height: 40))
         emailTextView.delegate = self
@@ -74,7 +75,24 @@ class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDeleg
         emailTextView.autocapitalizationType = .none
         emailTextView.returnKeyType = UIReturnKeyType.done
         containerView.addSubview(emailTextView)
-        makeEditButton(frame: CGRect(x: 330, y: Int(emailTextView.frame.minY)+10, width: 25, height: 25), selector: #selector(self.editEmail(_:)))
+        makeEditButton(frame: CGRect(x: 340, y: Int(emailTextView.frame.minY)+10, width: 25, height: 25), selector: #selector(self.editEmail(_:)))
+        
+        summaryTextView = UITextView(frame: CGRect(x: 75/2, y: 130, width: 300, height: 120))
+        summaryTextView.delegate = self
+        if User.sharedUser.summary == "" {
+            summaryTextView.text = "Hello everyone! This is my summary. I will use this space to give a quick introduction about me and my hacking experience."
+        } else {
+            summaryTextView.text = User.sharedUser.summary
+        }
+        summaryTextView.font =  UIFont(name:"HelveticaNeue-Light", size: 18)
+        summaryTextView.textColor = Header.appColor
+        summaryTextView.isScrollEnabled = false
+        summaryTextView.isEditable = false
+        summaryTextView.isSelectable = false
+        summaryTextView.returnKeyType = UIReturnKeyType.done
+        summaryTextView.textAlignment = .center
+        containerView.addSubview(summaryTextView)
+        makeEditButton(frame: CGRect(x: 340, y: Int(summaryTextView.frame.minY)+30, width: 25, height: 25), selector: #selector(self.editSummary(_:)))
     }
     
     // Readjusts the UIScrollView
@@ -95,8 +113,8 @@ class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDeleg
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             self.view.endEditing(true)
-            nameTextView.isSelectable = false
-            nameTextView.isEditable = false
+            textView.isSelectable = false
+            textView.isEditable = false
         }
         return true
     }
@@ -120,6 +138,12 @@ class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDeleg
         emailTextView.isSelectable = true
         emailTextView.isEditable = true
         emailTextView.becomeFirstResponder()
+    }
+    
+    func editSummary(_ sender: UIButton) {
+        summaryTextView.isSelectable = true
+        summaryTextView.isEditable = true
+        summaryTextView.becomeFirstResponder()
     }
     
     // Displays the title text of the tab in the center of the header

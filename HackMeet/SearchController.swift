@@ -17,7 +17,6 @@ class SearchController: UIViewController {
         self.view.backgroundColor = UIColor.white
         let header = Header(title: "Find Teammates")
         self.view.addSubview(header)
-    
+
     }
-    
 }
