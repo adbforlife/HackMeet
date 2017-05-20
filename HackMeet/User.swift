@@ -14,4 +14,7 @@ class User {
     var email = ""
     var numHackathons = 0
     
+    static var sharedUser = User()
+    private init() { }
+    
 }

@@ -30,7 +30,7 @@ class Header: UIView {
     
     // Displays the title of the tab
     func showTitle() {
-        makeLabel(label: UILabel(), text: title, rect: CGRect(x: self.width/2-75, y: 26, width: 150, height: 30), font: UIFont(name:"HelveticaNeue-Medium", size: 17)!)
+        makeLabel(label: UILabel(), text: title, rect: CGRect(x: self.width/2-75, y: 26, width: 150, height: 30), font: UIFont(name:"HelveticaNeue-Medium", size: 23)!)
     }
     
     // Displays the title text of the tab in the center of the header

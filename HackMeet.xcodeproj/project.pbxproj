@@ -108,7 +108,7 @@
 				TargetAttributes = {
 					64E35FDE1ED087530032C2FA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = KCH6M444Z5;
+						DevelopmentTeam = AUURGHLRT7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -275,7 +275,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KCH6M444Z5;
+				DEVELOPMENT_TEAM = AUURGHLRT7;
 				INFOPLIST_FILE = HackMeet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -289,7 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KCH6M444Z5;
+				DEVELOPMENT_TEAM = AUURGHLRT7;
 				INFOPLIST_FILE = HackMeet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
