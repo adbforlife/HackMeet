@@ -33,10 +33,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-<<<<<<< HEAD
-=======
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
->>>>>>> origin/master
 	</array>
 </dict>
 </plist>
