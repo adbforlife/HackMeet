@@ -28,9 +28,15 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+<<<<<<< HEAD
+=======
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+>>>>>>> origin/master
 	</array>
 </dict>
 </plist>
