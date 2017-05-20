@@ -8,14 +8,17 @@
 
 import UIKit
 
-class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDelegate {
+class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var scrollView: UIScrollView!
     var containerView = UIView()
     
+    var profileBorder: UIButton!
     var nameTextView: UITextView!
     var emailTextView: UITextView!
     var summaryTextView: UITextView!
+    
+    let imagePicker =  UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +35,15 @@ class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDeleg
         scrollView.addSubview(containerView)
         self.view.addSubview(scrollView)
         
-        let profileBorder = UIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
+        profileBorder = UIButton(frame: CGRect(x: 20, y: 20, width: 100, height: 100))
         profileBorder.layer.borderColor = Header.appColor.cgColor
         profileBorder.layer.borderWidth = 5
         profileBorder.layer.cornerRadius = 10
+        profileBorder.addTarget(self, action: #selector(self.picTouched(_:)), for: .touchUpInside)
         containerView.addSubview(profileBorder)
+        
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
         
         let proPic = UIImageView(image: UIImage(named: "ProPic.png")?.withRenderingMode(.alwaysTemplate))
         proPic.tintColor = Header.appColor
@@ -156,4 +163,56 @@ class ProfileController: UIViewController, UIScrollViewDelegate, UITextViewDeleg
         return label
     }
     
+    
+    
+    // Creates a UIAlertController to either take a picture or choose from the gallery
+    func picTouched(_ sender: UIButton!) {
+        let actionSheetController: UIAlertController = UIAlertController(title: nil, message: "How would you like to set your picture?", preferredStyle: .actionSheet)
+        actionSheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in })
+        actionSheetController.addAction(addPhotoAction(title: "Take Picture", source: .camera, message: "Sorry, the camera is inaccessible"))
+        actionSheetController.addAction(addPhotoAction(title: "Choose From Photos", source: .photoLibrary, message: "Sorry, the photo gallery is inaccessible"))
+        
+        if User.sharedUser.proPic.image.debugDescription != "nil" {
+            actionSheetController.addAction(UIAlertAction(title: "Delete Current Picture", style: .default) { action -> Void in
+                User.sharedUser.proPic = UIImageView()
+                self.profileBorder.setImage(UIImage(named: "Happy2.png")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            })
+        }
+        
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    // Sets up the screen that allows the user to pick or take a photo
+    func addPhotoAction(title: String, source: UIImagePickerControllerSourceType, message: String) -> UIAlertAction {
+        return UIAlertAction(title: title, style: .default) { action -> Void in
+            if UIImagePickerController.isSourceTypeAvailable(source) {
+                self.imagePicker.sourceType = source
+                self.present(self.imagePicker, animated: true,completion: nil)
+            } else {
+                self.errorMessage(title: message, message: "")
+            }
+        }
+    }
+    
+    // Displays the appropriate error message to the user when trying to pick/take a photo
+    func errorMessage(title: String, message: String){
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style:.default, handler: nil)
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true, completion: nil)
+    }
+    
+    // Updates the profile screen based on the chosen picture
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        User.sharedUser.proPic.image = chosenImage
+        profileBorder.setImage(chosenImage, for: .normal)
+        profileBorder.imageView?.layer.cornerRadius = profileBorder.layer.cornerRadius
+        dismiss(animated:true, completion: nil)
+    }
+    
+    // Dismisses the imagePickerController
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }
