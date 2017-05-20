@@ -147,11 +147,16 @@ Carthage/Build
 
 ## Other
 
-### Xcode Patch ###
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcworkspace/contents.xcworkspacedata
-/*.gcno
+# xcode noise
+build/*
+*.pbxuser
+*.mode1v3
+
+# old skool
+.svn
+
+# osx noise
+.DS_Store
+profile
 
 # End of https://www.gitignore.io/api/node,swift,xcode
